@@ -89,5 +89,6 @@ Backbone rules:
 - promote only the selected option's portal/module/actor/constraint decisions
 - do not import rejected options or the full comparison into `backbone.md`
 - keep the artifact concise and decision-oriented
+- treat generated index/state/memory artifacts as `agent_facing` or `machine_facing`; keep them compact and do not duplicate source-of-truth requirement text
 - keep `paths.backbone_index` as a navigator only: section names, trace IDs, module/feature hints, and short summaries; do not duplicate full requirement text
 - keep `project-memory.md` runtime-neutral so Claude Code, Codex, and Antigravity can all resume from the same accepted facts

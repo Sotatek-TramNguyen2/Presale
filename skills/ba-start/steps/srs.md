@@ -52,6 +52,8 @@ Run Steps 8-11 only. This path is intentionally split to avoid loading the full 
 - `paths.wireframe_input`
 - any wireframe artifacts and state produced during Step 9
 
+Treat generated index/state/memory artifacts as `agent_facing` or `machine_facing`; keep them compact and do not duplicate source-of-truth requirement text.
+
 ## Execution Order
 
 ```text

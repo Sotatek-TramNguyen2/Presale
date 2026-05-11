@@ -55,6 +55,7 @@ Execution rules:
 - Start from `paths.backbone_index`, then the exact targeted backbone sections, plus the exact plan path when genuinely needed.
 - Pull the FRD only when it already exists or the current mode requires it.
 - If the user already confirmed that story generation should proceed, continue from the resolved backbone instead of reopening discovery.
+- Treat generated index/state/memory artifacts as `agent_facing` or `machine_facing`; keep them compact and do not duplicate source-of-truth requirement text.
 
 Save to `paths.stories`.
 After generation, create or refresh `paths.stories_index` using [../../../templates/user-stories-index-template.md](../../../templates/user-stories-index-template.md). Keep it as a navigator over epics, stories, acceptance-criteria counts, screen IDs, and source headings.
