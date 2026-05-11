@@ -15,6 +15,9 @@ yarn-error.log*
 .vscode/
 __pycache__/
 
+# Local scratch files
+extract_pdf.py
+
 # Generated artifacts
 dist/
 build/
@@ -28,6 +31,9 @@ plans/**
 !plans/reports/.gitkeep
 designs/**/.design-snapshot.md
 designs/**/stitch-state.json
+
+# Local Superpowers planning artifacts
+docs/superpowers/
 
 # Environment files
 .env
