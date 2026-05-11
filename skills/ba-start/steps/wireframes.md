@@ -129,3 +129,4 @@ After the handoff pack is complete:
 
 - persist `paths.wireframe_map`
 - persist `paths.wireframe_state` with `State: completed`
+- treat generated index/state/memory artifacts as `agent_facing` or `machine_facing`; keep them compact and do not duplicate source-of-truth requirement text
