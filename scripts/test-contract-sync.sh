@@ -205,6 +205,46 @@ if missing:
     raise SystemExit(f"Missing token optimization template(s): {', '.join(missing)}")
 PY
 
+python3 - "${ROOT_DIR}/templates" <<'PY'
+import sys
+from pathlib import Path
+
+templates_dir = Path(sys.argv[1])
+max_bytes = {
+    "source-chunk-index-template.md": 1800,
+    "backbone-index-template.md": 1800,
+    "user-stories-index-template.md": 1800,
+    "srs-index-template.md": 1800,
+    "project-memory-index-template.md": 2600,
+    "project-memory-template.md": 2600,
+    "project-memory-hot-canonical-vocabulary-template.md": 2200,
+    "project-memory-hot-approved-decisions-template.md": 2200,
+    "project-memory-hot-pushback-triggers-template.md": 2200,
+    "project-memory-module-template.md": 2200,
+    "wireframe-map-template.md": 3600,
+    "review-packet-template.md": 2600,
+    "sub-agent-handoff-template.md": 2600,
+}
+required_tokens = {
+    "source-chunk-index-template.md": ["index_type", "source_artifact", "generated_at", "stale_status"],
+    "backbone-index-template.md": ["index_type", "source_artifact", "generated_at", "stale_status"],
+    "user-stories-index-template.md": ["index_type", "source_artifact", "generated_at", "stale_status"],
+    "srs-index-template.md": ["index_type", "source_artifact", "generated_at", "stale_status"],
+}
+for name, limit in max_bytes.items():
+    path = templates_dir / name
+    if not path.exists():
+        raise SystemExit(f"Missing compact internal template: {name}")
+    size = len(path.read_bytes())
+    if size > limit:
+        raise SystemExit(f"Internal template too large: {name} actual={size} max={limit}")
+for name, tokens in required_tokens.items():
+    text = (templates_dir / name).read_text(encoding="utf-8")
+    missing = [token for token in tokens if token not in text]
+    if missing:
+        raise SystemExit(f"Internal template missing freshness token(s): {name}: {', '.join(missing)}")
+PY
+
 python3 - "${ROOT_DIR}" <<'PY'
 import sys
 from pathlib import Path
