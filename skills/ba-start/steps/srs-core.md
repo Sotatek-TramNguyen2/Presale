@@ -1,0 +1,79 @@
+# BA Start Step - SRS Core
+
+This step requires:
+
+- `core/contract.yaml`
+- `core/contract-behavior.md`
+- `core/behavior/srs.md`
+
+## Step 8 - Produce SRS Core, Use Cases, And Screen Contract Plus
+
+Produce only the slices justified by mode and artifact gates. Use the accepted scope from the resolved backbone and user stories; do not reopen discovery after the user has approved SRS authoring.
+
+Mode defaults:
+
+- `lite`: run SRS only when explicitly requested.
+- `hybrid`: cover complex flows, risky validations, integrations, and delivery-critical screens.
+- `formal`: emit the full SRS set.
+
+Upstream context:
+
+- matching intake summary
+- backbone features, gates, and risks
+- user stories with acceptance criteria
+- FRD features and business rules when FRD exists or mode requires it
+
+### Group A - Core
+
+Sections:
+
+- Purpose and Scope
+- Overall Description
+- Functional Requirements table
+
+Output: `paths.srs_group` with `group=a`
+
+### Group B - Behavioral
+
+Sections:
+
+- Use Case Specifications
+
+Output: `paths.srs_group` with `group=b`
+
+Consistency rules:
+
+- each use case links to user stories and screens
+- actor actions use the same terminology as user stories and FRD
+
+### Group C - Screen Contract Plus
+
+Sections:
+
+- Screen Contract Plus
+- Screen Inventory
+
+Output: `paths.srs_group` with `group=c`
+
+Before Group C for UI-backed screens, apply the navigation schema gate in `core/behavior/srs.md`. If `paths.design_doc` is missing or unresolved, run Step 8.2 from `srs-wireframes.md` first.
+
+After Group C, run:
+
+```text
+python3 scripts/validate-navigation-consistency.py --design {paths.design_doc} --screen-contract {paths.srs_group group=c}
+```
+
+Fix blocking navigation validator findings before continuing.
+
+## Step 8.1 - Build Wireframe Constraint Pack
+
+After Groups B and C are complete, assemble `paths.wireframe_input` before any manual design work starts.
+
+Source inputs:
+
+- `paths.srs_group` with `group=b`
+- `paths.srs_group` with `group=c`
+- relevant portal snapshot from `paths.backbone`
+- relevant FRD and user-story excerpts for traceability
+
+The pack must include artifact set information, target design document path, use case excerpts, Screen Contract Plus, Screen Inventory, portal/navigation snapshots, active-menu evidence requirements, navigation exceptions, manual-design constraints, approved design snapshot or gaps, grouping/handoff plan, and stop conditions.

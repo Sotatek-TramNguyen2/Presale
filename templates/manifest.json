@@ -1,0 +1,290 @@
+{
+  "srs-template.md": {
+    "routing": {
+      "artifact": "srs",
+      "group_path_key": "srs_group",
+      "selector": "group",
+      "load_policy": "load requested group headings for grouped generation; load the full template only for final assembly"
+    },
+    "groups": {
+      "A": {
+        "headings": [
+          "## Mục đích và phạm vi (Purpose and Scope)",
+          "## Mô tả tổng quan (Overall Description)",
+          "## Yêu cầu chức năng (Functional Requirements)"
+        ]
+      },
+      "B": {
+        "headings": [
+          "## Đặc tả Use Case (Use Case Specifications)"
+        ]
+      },
+      "C": {
+        "headings": [
+          "## Hợp đồng màn hình tiền wireframe (Screen Contract Plus)",
+          "## Danh mục màn hình (Screen Inventory)"
+        ]
+      },
+      "D": {
+        "headings": [
+          "## Yêu cầu phi chức năng (Non-Functional Requirements)",
+          "## Sơ đồ luồng dữ liệu (Data Flow Diagrams)",
+          "## Sơ đồ thực thể quan hệ (Entity Relationship Diagram)",
+          "## Đặc tả API (API Specifications)",
+          "## Ràng buộc (Constraints)"
+        ]
+      },
+      "E": {
+        "headings": [
+          "## Mô tả màn hình (Screen Descriptions)",
+          "## Tham chiếu Wireframe / Mockup thủ công (Manual Wireframe / Mockup Reference)",
+          "## Ý đồ thiết kế màn hình (Screen Design Intent)",
+          "## Vùng màn hình (Screen Regions)",
+          "## Hướng dẫn gắn wireframe thủ công (Manual Wireframe Attachment Guide)"
+        ]
+      },
+      "F": {
+        "headings": [
+          "## Quy tắc dùng chung (Common Rules)",
+          "## Danh sách thông điệp (Message List)",
+          "## Kịch bản kiểm thử (Test Cases)",
+          "## Bảng thuật ngữ (Glossary)"
+        ]
+      }
+    }
+  },
+  "frd-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Tài liệu yêu cầu chức năng (Functional Requirements Document)"
+        ]
+      }
+    }
+  },
+  "requirements-backbone-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Xương sống yêu cầu (Requirements Backbone)"
+        ]
+      }
+    }
+  },
+  "project-home-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Trang điều phối dự án BA (Project Home)"
+        ]
+      }
+    }
+  },
+  "options-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Danh mục phương án giải pháp (Solution Options Index)"
+        ]
+      }
+    }
+  },
+  "solution-option-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Phương án giải pháp (Solution Option)"
+        ]
+      }
+    }
+  },
+  "options-comparison-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Bảng so sánh phương án (Options Comparison)"
+        ]
+      }
+    }
+  },
+  "collab-home-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Trang cộng tác BA (Collab Home)"
+        ]
+      }
+    }
+  },
+  "module-home-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Trang module BA (Module Home)"
+        ]
+      }
+    }
+  },
+  "review-packet-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Gói gửi review module (Module Review Packet)"
+        ]
+      }
+    }
+  },
+  "user-story-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Mẫu User Story (User Story Template)"
+        ]
+      }
+    }
+  },
+  "wireframe-input-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Gói constraint wireframe (Wireframe Constraint Pack)"
+        ]
+      }
+    }
+  },
+  "project-memory-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Bộ nhớ dự án (Project Memory) — Chế độ Compact/Summary"
+        ]
+      }
+    }
+  },
+  "project-memory-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Chỉ mục bộ nhớ dự án (Project Memory Index)"
+        ]
+      }
+    }
+  },
+  "project-memory-log-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Nhật ký bộ nhớ dự án (Project Memory Log)"
+        ]
+      }
+    }
+  },
+  "project-memory-hot-canonical-vocabulary-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Từ vựng chuẩn dự án (Canonical Vocabulary) — Hot Shard"
+        ]
+      }
+    }
+  },
+  "project-memory-hot-approved-decisions-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Quyết định đã chốt (Approved Decisions) — Hot Shard"
+        ]
+      }
+    }
+  },
+  "project-memory-hot-pushback-triggers-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Trigger dừng và hỏi lại (Push-back Triggers) — Hot Shard"
+        ]
+      }
+    }
+  },
+  "project-memory-module-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Bộ nhớ Module (Module Memory Shard) — Warm Tier"
+        ]
+      }
+    }
+  },
+  "project-memory-fileback-record-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Bản ghi Promotion Bộ nhớ (Memory File-Back Record)"
+        ]
+      }
+    }
+  },
+  "memory-packet-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Gói ngữ cảnh giới hạn (Bounded Context Packet)"
+        ]
+      }
+    }
+  },
+  "sub-agent-handoff-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Sub-Agent Handoff Template"
+        ]
+      }
+    }
+  },
+  "delegation-status-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Delegation Status"
+        ]
+      }
+    }
+  },
+  "source-chunk-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Chỉ mục chunk nguồn (Source Chunk Index)"
+        ]
+      }
+    }
+  },
+  "backbone-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Chỉ mục backbone (Backbone Index)"
+        ]
+      }
+    }
+  },
+  "user-stories-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Chỉ mục user stories (User Stories Index)"
+        ]
+      }
+    }
+  },
+  "srs-index-template.md": {
+    "groups": {
+      "all": {
+        "headings": [
+          "# Chỉ mục SRS (SRS Index)"
+        ]
+      }
+    }
+  }
+}

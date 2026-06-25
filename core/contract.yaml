@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "defaults": {
+    "language": "vi",
+    "date_token_format": "YYMMDD-HHmm",
+    "mode": "hybrid",
+    "ui_baseline": "Shadcn UI"
+  },
+  "states": {
+    "wireframe": ["completed", "skipped", "not-applicable", "missing"],
+    "delegation": ["queued", "running", "completed", "needs-repartition", "blocked", "failed"],
+    "heartbeat_minutes": 5,
+    "stall_after_minutes": 10
+  },
+  "paths": {
+    "project_root": "plans/{slug}-{date}",
+    "source_cache_root": "plans/_source-cache/{source_hash}",
+    "source_promoted_root": "plans/{slug}-{date}/00_source",
+    "source_manifest": "plans/{slug}-{date}/00_source/manifest.json",
+    "source_summary": "plans/{slug}-{date}/00_source/summary.md",
+    "source_chunks_dir": "plans/{slug}-{date}/00_source/chunks",
+    "source_chunk_index": "plans/{slug}-{date}/00_source/chunk-index.md",
+    "project_home": "plans/{slug}-{date}/PROJECT-HOME.md",
+    "design_root": "designs/{slug}",
+    "compiled_root": "plans/{slug}-{date}/04_compiled",
+    "delegation_root": "plans/{slug}-{date}/delegation",
+    "collab_home": "plans/{slug}-{date}/COLLAB-HOME.md",
+    "module_home": "plans/{slug}-{date}/03_modules/{module_slug}/MODULE-HOME.md",
+    "review_packet": "plans/{slug}-{date}/delegation/review-packets/{module_slug}.md",
+    "intake": "plans/{slug}-{date}/01_intake/intake.md",
+    "plan": "plans/{slug}-{date}/01_intake/plan.md",
+    "options_root": "plans/{slug}-{date}/01_intake/options",
+    "options_index": "plans/{slug}-{date}/01_intake/options/index.md",
+    "option_item": "plans/{slug}-{date}/01_intake/options/option-{option}.md",
+    "options_comparison": "plans/{slug}-{date}/01_intake/options/comparison.md",
+    "backbone": "plans/{slug}-{date}/02_backbone/backbone.md",
+    "backbone_index": "plans/{slug}-{date}/02_backbone/backbone-index.md",
+    "module_root": "plans/{slug}-{date}/03_modules/{module_slug}",
+    "frd": "plans/{slug}-{date}/03_modules/{module_slug}/frd.md",
+    "stories": "plans/{slug}-{date}/03_modules/{module_slug}/user-stories.md",
+    "stories_index": "plans/{slug}-{date}/03_modules/{module_slug}/user-stories-index.md",
+    "srs": "plans/{slug}-{date}/03_modules/{module_slug}/srs.md",
+    "srs_index": "plans/{slug}-{date}/03_modules/{module_slug}/srs-index.md",
+    "srs_group": "plans/{slug}-{date}/03_modules/{module_slug}/srs-group-{group}.md",
+    "wireframe_input": "plans/{slug}-{date}/03_modules/{module_slug}/wireframe-input.md",
+    "wireframe_map": "plans/{slug}-{date}/03_modules/{module_slug}/wireframe-map.md",
+    "wireframe_state": "plans/{slug}-{date}/03_modules/{module_slug}/wireframe-state.md",
+    "compiled_frd": "plans/{slug}-{date}/04_compiled/compiled-frd.html",
+    "compiled_srs": "plans/{slug}-{date}/04_compiled/compiled-srs.html",
+    "design_doc": "designs/{slug}/DESIGN.md",
+    "project_memory": "plans/{slug}-{date}/02_backbone/project-memory.md",
+    "memory_root": "plans/{slug}-{date}/02_backbone/project-memory",
+    "memory_index": "plans/{slug}-{date}/02_backbone/project-memory/index.md",
+    "memory_log": "plans/{slug}-{date}/02_backbone/project-memory/log.md",
+    "memory_hot": "plans/{slug}-{date}/02_backbone/project-memory/hot",
+    "memory_warm": "plans/{slug}-{date}/02_backbone/project-memory/warm",
+    "memory_cold": "plans/{slug}-{date}/02_backbone/project-memory/cold",
+    "memory_hot_vocabulary": "plans/{slug}-{date}/02_backbone/project-memory/hot/canonical-vocabulary.md",
+    "memory_hot_decisions": "plans/{slug}-{date}/02_backbone/project-memory/hot/approved-decisions.md",
+    "memory_hot_pushback": "plans/{slug}-{date}/02_backbone/project-memory/hot/pushback-triggers.md",
+    "memory_module_warm": "plans/{slug}-{date}/02_backbone/project-memory/warm/modules/{module_slug}.md",
+    "packet_root": "plans/{slug}-{date}/delegation/packets",
+    "behavior_base": "core/contract-behavior.md",
+    "behavior_root": "core/behavior",
+    "behavior_intake": "core/behavior/intake.md",
+    "behavior_backbone": "core/behavior/backbone.md",
+    "behavior_impact": "core/behavior/impact.md",
+    "behavior_module_authoring": "core/behavior/module-authoring.md",
+    "behavior_srs": "core/behavior/srs.md",
+    "behavior_wireframes": "core/behavior/wireframes.md",
+    "behavior_package_status_next": "core/behavior/package-status-next.md"
+  },
+  "artifact_profiles": {
+    "source_manifest": "machine_facing",
+    "source_summary": "agent_facing",
+    "source_chunk_index": "agent_facing",
+    "project_home": "user_facing",
+    "collab_home": "user_facing",
+    "module_home": "user_facing",
+    "review_packet": "agent_facing",
+    "intake": "user_facing",
+    "plan": "agent_facing",
+    "options_index": "agent_facing",
+    "option_item": "user_facing",
+    "options_comparison": "user_facing",
+    "backbone": "user_facing",
+    "backbone_index": "agent_facing",
+    "frd": "user_facing",
+    "stories": "user_facing",
+    "stories_index": "agent_facing",
+    "srs": "user_facing",
+    "srs_index": "agent_facing",
+    "srs_group": "user_facing",
+    "wireframe_input": "agent_facing",
+    "wireframe_map": "agent_facing",
+    "wireframe_state": "machine_facing",
+    "compiled_frd": "user_facing",
+    "compiled_srs": "user_facing",
+    "design_doc": "agent_facing",
+    "project_memory": "agent_facing",
+    "memory_index": "agent_facing",
+    "memory_log": "agent_facing",
+    "memory_hot_vocabulary": "agent_facing",
+    "memory_hot_decisions": "agent_facing",
+    "memory_hot_pushback": "agent_facing",
+    "memory_module_warm": "agent_facing"
+  },
+  "patterns": {
+    "date_token": "^\\d{6}-\\d{4}$",
+    "project_dir": "^(.+)-(\\d{6}-\\d{4})$"
+  },
+  "resolution": {
+    "slug_sources": ["explicit", "project_directories"],
+    "date_sources": ["explicit", "project_directory"],
+    "module_sources": ["explicit", "single_module_only"],
+    "strict_exact_match": true,
+    "never_use_mtime": true
+  },
+  "legacy": {
+    "roots": ["plans/reports", "plans/reports/final", "plans/reports/drafts"],
+    "blocked_patterns": ["plans/reports/002-intake-form.md", "plans/reports/002-gap-analysis.md", "plans/reports/002-*.md", "plans/reports/final/*", "plans/reports/drafts/*"]
+  },
+  "commands": {
+    "intake": {
+      "module_required": false,
+      "mutable": true,
+      "requires": [],
+      "outputs": ["project_home", "source_summary", "source_chunks_dir", "source_chunk_index", "intake", "plan"]
+    },
+    "impact": {
+      "module_required": false,
+      "mutable": false,
+      "requires": ["intake"],
+      "outputs": []
+    },
+    "options": {
+      "module_required": false,
+      "mutable": true,
+      "requires": ["intake"],
+      "outputs": ["project_home", "plan", "options_index", "options_comparison"]
+    },
+    "backbone": {
+      "module_required": false,
+      "mutable": true,
+      "requires": ["intake"],
+      "outputs": ["project_home", "backbone", "backbone_index", "project_memory"]
+    },
+    "frd": {
+      "module_required": true,
+      "mutable": true,
+      "requires": ["backbone"],
+      "outputs": ["frd"]
+    },
+    "stories": {
+      "module_required": true,
+      "mutable": true,
+      "requires": ["backbone"],
+      "outputs": ["stories", "stories_index"]
+    },
+    "srs": {
+      "module_required": true,
+      "mutable": true,
+      "requires": ["backbone", "stories"],
+      "outputs": ["srs", "srs_group", "srs_index", "wireframe_input"]
+    },
+    "wireframes": {
+      "module_required": true,
+      "mutable": true,
+      "requires": ["wireframe_input"],
+      "outputs": ["design_doc", "wireframe_map", "wireframe_state"]
+    },
+    "package": {
+      "module_required": false,
+      "mutable": true,
+      "requires": [],
+      "outputs": ["compiled_frd", "compiled_srs"]
+    },
+    "status": {
+      "module_required": false,
+      "mutable": false,
+      "requires": [],
+      "outputs": []
+    },
+    "next": {
+      "module_required": false,
+      "mutable": false,
+      "requires": [],
+      "outputs": []
+    }
+  },
+  "behavior_shards": {
+    "intake": ["behavior_intake"],
+    "options": ["behavior_backbone"],
+    "backbone": ["behavior_backbone"],
+    "impact": ["behavior_impact"],
+    "frd": ["behavior_module_authoring"],
+    "stories": ["behavior_module_authoring"],
+    "srs": ["behavior_srs"],
+    "wireframes": ["behavior_wireframes"],
+    "package": ["behavior_package_status_next"],
+    "status": ["behavior_package_status_next"],
+    "next": ["behavior_package_status_next"]
+  },
+  "source_of_truth_order": ["backbone", "intake"],
+  "next_step_order": ["intake", "options", "backbone", "frd", "stories", "srs", "wireframes", "package", "status"],
+  "routing": {
+    "impact": {
+      "scope_lock_change": "intake",
+      "backbone_change": "backbone",
+      "story_detail_change": "stories",
+      "srs_behavior_change": "srs",
+      "ui_impact_follow_up": "wireframes"
+    }
+  },
+  "templates": {
+    "manifest": "templates/manifest.json"
+  },
+  "memory": {
+    "compact_fallback": "active when only project_memory file exists and memory_root directory is absent",
+    "index_role": "bounded navigator routing to shards and modules; must not become a second monolith",
+    "log_role": "optional append-only chronology support; excluded from normal command reads",
+    "cold_default": "never loaded by default; only via explicit escalation",
+    "shard_tree_optional": true,
+    "migration_scope_excludes_roadmap_dirs": true
+  },
+  "activation": {
+    "levels": ["Base", "Modular", "Program"],
+    "default": "Base",
+    "provisional_until_fixture_validation": false,
+    "thresholds": {
+      "modular": {
+        "any_of": [
+          {
+            "signal": "module_count",
+            "operator": "gte",
+            "value": 2
+          },
+          {
+            "signal": "owner_count",
+            "operator": "gte",
+            "value": 2
+          }
+        ]
+      },
+      "program": {
+        "any_of": [
+          {
+            "signal": "cross_module_dependency",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "signal": "delegation_slice_count",
+            "operator": "gte",
+            "value": 2
+          },
+          {
+            "all_of": [
+              {
+                "signal": "owner_count",
+                "operator": "gte",
+                "value": 2
+              },
+              {
+                "signal": "delegation_slice_count",
+                "operator": "gte",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "signals": {
+      "module_count": {
+        "source": "count module directories under paths.module_root parent",
+        "compact_fallback": 1
+      },
+      "owner_count": {
+        "source": "distinct owners declared in memory index/module metadata",
+        "compact_fallback": 1
+      },
+      "cross_module_dependency": {
+        "source": "explicit flag or listed dependency in memory index",
+        "compact_fallback": false
+      },
+      "delegation_slice_count": {
+        "source": "count active/queued trackers under paths.delegation_root, excluding archive",
+        "compact_fallback": 0
+      },
+      "source_chunk_count": {
+        "source": "count chunk files under paths.source_chunks_dir",
+        "compact_fallback": 0
+      },
+      "backbone_bytes": {
+        "source": "byte size of paths.backbone",
+        "compact_fallback": 0
+      },
+      "stories_bytes": {
+        "source": "byte size of paths.stories",
+        "compact_fallback": 0
+      },
+      "srs_total_bytes": {
+        "source": "sum byte size of paths.srs and paths.srs_group files",
+        "compact_fallback": 0
+      },
+      "artifact_total_bytes": {
+        "source": "sum byte size of active BA artifacts under paths.project_root",
+        "compact_fallback": 0
+      }
+    },
+    "context_thresholds": {
+      "source_chunk_count": 8,
+      "backbone_bytes": 25000,
+      "stories_bytes": 25000,
+      "srs_total_bytes": 30000,
+      "artifact_total_bytes": 80000
+    },
+    "lifecycle": {
+      "auto_escalation": true,
+      "auto_downgrade": false,
+      "downgrade_requires": "explicit activation refresh after archival or project simplification",
+      "threshold_locking": "locked for v1 after fixture validation; runtime parity execution is exempted by maintainer release decision"
+    },
+    "persisted_state_path": "paths.memory_index",
+    "compact_fallback_state_path": "paths.project_memory"
+  }
+}
