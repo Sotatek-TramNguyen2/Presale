@@ -1,3 +1,6 @@
+Sample HTML: https://drive.google.com/drive/folders/1BKcl85eVsXVa7EDrfnlJ7nNQvDRqEx_i
+Sample test: https://drive.google.com/drive/folders/1gnMVXGAukbd0Ns4aR0xwhSoGgT1b9YJ9
+
 Dựa trên tài liệu Proposal dự án TE-Ducation và các tài liệu kiến trúc của hệ thống SotaAgent, dưới đây là chi tiết về các chức năng, giao diện của giai đoạn POC và các thông tin BA cần chuẩn bị để khởi tạo (init) ứng dụng này.
 
 ### 1. Các Function (Chức năng) trong POC WBS
